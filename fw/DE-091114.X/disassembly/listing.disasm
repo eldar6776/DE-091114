@@ -1,0 +1,883 @@
+Disassembly Listing for ABS_ENC
+Generated From:
+C:/Users/eldar.dedic/OneDrive/temp/Apsolutni enkoder/fw/v1.00/ABS_ENC.X/dist/default/production/ABS_ENC.X.production.cof
+Nov 27, 2014 11:13:18 AM
+
+---  E:/3.46/pic18-lt/cxx-framework/src/traditional/proc/p18f23k20.asm  ---------------------------------
+0302  0E00     MOVLW 0x0
+0304  6EF3     MOVWF PROD, ACCESS
+0306  EE00     LFSR 0, 0x0
+0308  F000     NOP
+030A  0E02     MOVLW 0x2
+030C  D801     RCALL zero_block
+030E  0012     RETURN 0
+0310  60EA     CPFSLT FSR0H, ACCESS
+0312  D002     BRA compare_l
+0314  6AEE     CLRF POSTINC0, ACCESS
+0316  D7FC     BRA zero_block
+0318  50F3     MOVF PROD, W, ACCESS
+031A  60E9     CPFSLT FSR0, ACCESS
+031C  0012     RETURN 0
+031E  6AEE     CLRF POSTINC0, ACCESS
+0320  D7FC     BRA loop_l
+---  E:/3.46/pic18-lt/cxx-framework/src/pmc_common/Timers/t0open.c  -------------------------------------
+02CA  CFD9     MOVFF FSR2, POSTINC1
+02CC  FFE6     NOP
+02CE  CFDA     MOVFF FSR2H, POSTINC1
+02D0  FFE6     NOP
+02D2  CFE1     MOVFF FSR1, FSR2
+02D4  FFD9     NOP
+02D6  CFE2     MOVFF FSR1H, FSR2H
+02D8  FFDA     NOP
+02DA  0EFD     MOVLW 0xFD
+02DC  50DB     MOVF PLUSW2, W, ACCESS
+02DE  0B7F     ANDLW 0x7F
+02E0  6ED5     MOVWF T0CON, ACCESS
+02E2  6AD7     CLRF TMR0H, ACCESS
+02E4  6AD6     CLRF TMR0, ACCESS
+02E6  94F2     BCF INTCON, 2, ACCESS
+02E8  0EFD     MOVLW 0xFD
+02EA  AEDB     BTFSS PLUSW2, 7, ACCESS
+02EC  D002     BRA 0x2F2
+02EE  8AF2     BSF INTCON, 5, ACCESS
+02F0  D001     BRA 0x2F4
+02F2  9AF2     BCF INTCON, 5, ACCESS
+02F4  8ED5     BSF T0CON, 7, ACCESS
+02F6  52E5     MOVF POSTDEC1, F, ACCESS
+02F8  CFE5     MOVFF POSTDEC1, FSR2H
+02FA  FFDA     NOP
+02FC  CFE7     MOVFF INDF1, FSR2
+02FE  FFD9     NOP
+0300  0012     RETURN 0
+---  E:/3.46/pic18-lt/cxx-framework/src/pmc_common/SPI/spi_open.c  --------------------------------------
+0260  CFD9     MOVFF FSR2, POSTINC1
+0262  FFE6     NOP
+0264  CFDA     MOVFF FSR2H, POSTINC1
+0266  FFE6     NOP
+0268  CFE1     MOVFF FSR1, FSR2
+026A  FFD9     NOP
+026C  CFE2     MOVFF FSR1H, FSR2H
+026E  FFDA     NOP
+0270  0E3F     MOVLW 0x3F
+0272  16C7     ANDWF SSPSTAT, F, ACCESS
+0274  6AC6     CLRF SSPCON1, ACCESS
+0276  0EFD     MOVLW 0xFD
+0278  50DB     MOVF PLUSW2, W, ACCESS
+027A  12C6     IORWF SSPCON1, F, ACCESS
+027C  0EFB     MOVLW 0xFB
+027E  50DB     MOVF PLUSW2, W, ACCESS
+0280  12C7     IORWF SSPSTAT, F, ACCESS
+0282  0EFC     MOVLW 0xFC
+0284  50DB     MOVF PLUSW2, W, ACCESS
+0286  0A03     XORLW 0x3
+0288  E009     BZ 0x29C
+028A  0A01     XORLW 0x1
+028C  E004     BZ 0x296
+028E  0A02     XORLW 0x2
+0290  E106     BNZ 0x29E
+0292  8CC7     BSF SSPSTAT, 6, ACCESS
+0294  D004     BRA 0x29E
+0296  8CC7     BSF SSPSTAT, 6, ACCESS
+0298  88C6     BSF SSPCON1, 4, ACCESS
+029A  D001     BRA 0x29E
+029C  88C6     BSF SSPCON1, 4, ACCESS
+029E  0EFD     MOVLW 0xFD
+02A0  50DB     MOVF PLUSW2, W, ACCESS
+02A2  0A05     XORLW 0x5
+02A4  E006     BZ 0x2B2
+02A6  0A01     XORLW 0x1
+02A8  E106     BNZ 0x2B6
+02AA  8694     BSF TRISC, 3, ACCESS
+02AC  8A92     BSF TRISA, 5, ACCESS
+02AE  987E     BCF ANSEL, 4, ACCESS
+02B0  D003     BRA 0x2B8
+02B2  8694     BSF TRISC, 3, ACCESS
+02B4  D001     BRA 0x2B8
+02B6  9694     BCF TRISC, 3, ACCESS
+02B8  8894     BSF TRISC, 4, ACCESS
+02BA  9A94     BCF TRISC, 5, ACCESS
+02BC  8AC6     BSF SSPCON1, 5, ACCESS
+02BE  52E5     MOVF POSTDEC1, F, ACCESS
+02C0  CFE5     MOVFF POSTDEC1, FSR2H
+02C2  FFDA     NOP
+02C4  CFE7     MOVFF INDF1, FSR2
+02C6  FFD9     NOP
+02C8  0012     RETURN 0
+---  C:/Users/eldar.dedic/OneDrive/temp/Apsolutni enkoder/fw/v1.00/ABS_ENC.X/main.c  --------------------
+1:             /******************************************************************************
+2:              *
+3:              *               Apsolutni enkoder ugla za ILLIG RDM K70
+4:              *
+5:              *                          Glavni program
+6:              *
+7:              *******************************************************************************
+8:              * Ime fajla:       main.c
+9:              *
+10:             * Procesor:        PIC18F23K20
+11:             *
+12:             * Kompajler:       MCC18 v3.47
+13:             *
+14:             * IDE:             MPLAB X IDE v1.95 (java 1.7.0_25)
+15:             *
+16:             * Firma:           PROVEN d.o.o. Sarajevo
+17:             *
+18:             * Autor:           <mailto> eldar6776@hotmail.com
+19:             *
+20:             * Prava:           Sva prava na programski kod zadrzava firma
+21:             *                  PROVEN d.o.o. Sarajevo.
+22:             *                  <mailto> proven@bih.net.ba
+23:             *                  Adema Buce 102, 71000 Sarajevo
+24:             *                  Federacija Bosne i Hercegovine
+25:             *                  Bosna i Hercegovina
+26:             *                  tel.:+387 33 651 407
+27:             *                  tel.:+387 33 718 670
+28:             *                  fax.:+387 33 718 671
+29:             *                  www.proven.ba
+30:             *
+31:             ******************************************************************************/
+32:            //
+33:            //
+34:            /** U K L J U C E N I *********************************************************/
+35:            //
+36:            //
+37:            #include <p18cxxx.h>
+38:            #include <stdlib.h>
+39:            #include <delays.h>
+40:            #include <usart.h>
+41:            #include <timers.h>
+42:            #include <spi.h>
+43:            #include "typedefs.h"
+44:            #include "io_cfg.h"
+45:            #include "main.h"
+46:            //
+47:            #pragma code high_vector = 0x08
+48:            //
+49:            // <editor-fold defaultstate="collapsed" desc="asm high vector">
+50:            
+51:            void interrupt_at_high_vector(void) {
+52:                _asm goto high_isr _endasm
+0008  EF0F     GOTO 0x1E
+000A  F000     NOP
+53:            }// End of interrupt_at_high_vector
+000C  0012     RETURN 0
+54:            // </editor-fold>
+55:            //
+56:            #pragma code low_vector = 0x18
+57:            //
+58:            // <editor-fold defaultstate="collapsed" desc="asm low vector">
+59:            
+60:            void interrupt_at_low_vector(void) {
+61:                _asm goto low_isr _endasm
+0018  EF1F     GOTO 0x3E
+001A  F000     NOP
+62:            }// End of interrupt_at_low_vector
+001C  0012     RETURN 0
+63:            // </editor-fold>
+64:            //
+65:            //
+66:            //
+67:            // <editor-fold defaultstate="collapsed" desc="high interrupt">
+68:            #pragma interrupt high_isr
+69:            //
+70:            //
+71:            //
+72:            void high_isr(void) {
+001E  CFDA     MOVFF FSR2H, PREINC1
+0020  FFE4     NOP
+0022  52E6     MOVF POSTINC1, F, ACCESS
+73:                //
+74:                //------------------------------------------- check USART RX interrupt
+75:                //
+76:                if (PIE1bits.RCIE && PIR1bits.RCIF) {
+0024  509D     MOVF PIE1, W, ACCESS
+0026  0B20     ANDLW 0x20
+0028  E001     BZ 0x2C
+002A  509E     MOVF PIR1, W, ACCESS
+77:            
+78:                }// End of USART RX INTERRUPT
+79:                //
+80:                //------------------------------------------- check USART TX interrupt
+81:                //
+82:                if (PIE1bits.TXIE && PIR1bits.TXIF) {
+002C  509D     MOVF PIE1, W, ACCESS
+002E  0B10     ANDLW 0x10
+0030  E002     BZ 0x36
+0032  509E     MOVF PIR1, W, ACCESS
+0034  0B10     ANDLW 0x10
+83:                    
+84:                }// End of USART TX INTERRUPT
+85:            }// End of high_isr
+0036  52E5     MOVF POSTDEC1, F, ACCESS
+0038  CFE5     MOVFF POSTDEC1, FSR2H
+003A  FFDA     NOP
+003C  0011     RETFIE 1
+86:            // </editor-fold>
+87:            //
+88:            //
+89:            //
+90:            // <editor-fold defaultstate="collapsed" desc="low interrupt">
+91:            #pragma interruptlow low_isr
+92:            //
+93:            //
+94:            //
+95:            void low_isr(void) {
+003E  CFD8     MOVFF STATUS, PREINC1
+0040  FFE4     NOP
+0042  CFE0     MOVFF BSR, PREINC1
+0044  FFE4     NOP
+0046  6EE4     MOVWF PREINC1, ACCESS
+0048  CFDA     MOVFF FSR2H, PREINC1
+004A  FFE4     NOP
+004C  52E6     MOVF POSTINC1, F, ACCESS
+96:                //
+97:                //------------------------------------------- check interrupt source
+98:                //
+99:                if (INTCONbits.TMR0IE && INTCONbits.TMR0IF) {
+004E  50F2     MOVF INTCON, W, ACCESS
+0050  0B20     ANDLW 0x20
+0052  E006     BZ 0x60
+0054  50F2     MOVF INTCON, W, ACCESS
+0056  0B04     ANDLW 0x4
+0058  E003     BZ 0x60
+100:                   INTCONbits.TMR0IF = FALSE; //clear interrupt flag
+005A  94F2     BCF INTCON, 2, ACCESS
+101:                   TMR0L = 0x06; // timer0 IRQ 1ms
+005C  0E06     MOVLW 0x6
+005E  6ED6     MOVWF TMR0, ACCESS
+102:               }// End of if(INTCONbits.TMR0IE && .....
+103:           }// End of low_isr
+0060  52E5     MOVF POSTDEC1, F, ACCESS
+0062  CFE5     MOVFF POSTDEC1, FSR2H
+0064  FFDA     NOP
+0066  50E5     MOVF POSTDEC1, W, ACCESS
+0068  CFE5     MOVFF POSTDEC1, BSR
+006A  FFE0     NOP
+006C  CFE5     MOVFF POSTDEC1, STATUS
+006E  FFD8     NOP
+0070  0010     RETFIE 0
+104:           // </editor-fold>
+105:           //
+106:           //
+107:           //
+108:           #pragma code
+109:           //
+110:           // <editor-fold defaultstate="collapsed" desc="init system">
+111:           
+112:           void InitSYS(void) {
+113:               //------------------------------------------- config oscilator source
+114:               //
+115:               OSCCONbits.IRCF2 = 1; // int.osc. freq. select 16 MHz
+0072  8CD3     BSF OSCCON, 6, ACCESS
+116:               OSCCONbits.IRCF1 = 1; // int.osc. freq. select 16 MHz
+0074  8AD3     BSF OSCCON, 5, ACCESS
+117:               OSCCONbits.IRCF0 = 1; // int.osc. freq. select 16 MHz
+0076  88D3     BSF OSCCON, 4, ACCESS
+118:               OSCCONbits.SCS1 = 0; //
+0078  92D3     BCF OSCCON, 1, ACCESS
+119:               OSCCONbits.SCS0 = 0; //
+007A  90D3     BCF OSCCON, 0, ACCESS
+120:           
+121:               //OSCTUNEbits.PLLEN = 1; // PLL enabled
+122:               while (!OSCCONbits.IOFS) continue;
+007C  A4D3     BTFSS OSCCON, 2, ACCESS
+007E  D7FE     BRA 0x7C
+123:               //
+124:               //------------------------------------------- config oscilator frequency
+125:               //
+126:               ANSEL = 0b00000000;
+0080  6A7E     CLRF ANSEL, ACCESS
+127:               ANSELH = 0b00000000;
+0082  6A7F     CLRF ANSELH, ACCESS
+128:               PORTA = 0x00;
+0084  6A80     CLRF PORTA, ACCESS
+129:               PORTB = 0x00;
+0086  6A81     CLRF PORTB, ACCESS
+130:               PORTC = 0x00;
+0088  6A82     CLRF PORTC, ACCESS
+131:               TRISA = 0x00;
+008A  6A92     CLRF TRISA, ACCESS
+132:               TRISB = 0x00;
+008C  6A93     CLRF TRISB, ACCESS
+133:               TRISC = 0b11010011;
+008E  0ED3     MOVLW 0xD3
+0090  6E94     MOVWF TRISC, ACCESS
+134:               LATA = 0x00;
+0092  6A89     CLRF LATA, ACCESS
+135:               LATB = 0x00;
+0094  6A8A     CLRF LATB, ACCESS
+136:               LATC = 0x00;
+0096  6A8B     CLRF LATC, ACCESS
+137:               //
+138:               //------------------------------------------- open timer 0
+139:               //------------------------------------------- interrupt time base for
+140:               //------------------------------------------- display driver
+141:               //
+142:               OpenTimer0(TIMER_INT_ON &
+143:                       T0_8BIT &
+144:                       T0_SOURCE_INT &
+145:                       T0_PS_1_16);
+0098  6EE6     MOVWF POSTINC1, ACCESS
+009A  EC65     CALL 0x2CA, 0
+009C  F001     NOP
+009E  52E5     MOVF POSTDEC1, F, ACCESS
+146:               //
+147:               //------------------------------------------- open usart 19200bps
+148:               //
+149:               TXSTAbits.TX9 = FALSE;
+00A0  9CAC     BCF TXSTA, 6, ACCESS
+150:               TXSTAbits.SYNC = FALSE;
+00A2  98AC     BCF TXSTA, 4, ACCESS
+151:               TXSTAbits.BRGH = LOW;
+00A4  94AC     BCF TXSTA, 2, ACCESS
+152:               TXSTAbits.TXEN = HIGH;
+00A6  8AAC     BSF TXSTA, 5, ACCESS
+153:               RCSTAbits.ADDEN = FALSE;
+00A8  96AB     BCF RCSTA, 3, ACCESS
+154:               RCSTAbits.CREN = TRUE;
+00AA  88AB     BSF RCSTA, 4, ACCESS
+155:               RCSTAbits.RX9 = FALSE;
+00AC  9CAB     BCF RCSTA, 6, ACCESS
+156:               RCSTAbits.SPEN = TRUE;
+00AE  8EAB     BSF RCSTA, 7, ACCESS
+157:               BAUDCONbits.BRG16 = FALSE;
+00B0  96B8     BCF BAUDCON, 3, ACCESS
+158:               SPBRGH = 0;
+00B2  6AB0     CLRF SPBRGH, ACCESS
+159:               SPBRG = 51;
+00B4  0E33     MOVLW 0x33
+00B6  6EAF     MOVWF SPBRG, ACCESS
+160:               //PIE1bits.RCIE = HIGH;
+161:               //PIE1bits.TXIE = HIGH;
+162:               //
+163:               //------------------------------------------- open spi interface
+164:               //
+165:               OpenSPI(SPI_FOSC_16, MODE_00, SMPEND);
+00B8  0E80     MOVLW 0x80
+00BA  6EE6     MOVWF POSTINC1, ACCESS
+00BC  6AE6     CLRF POSTINC1, ACCESS
+00BE  0E01     MOVLW 0x1
+00C0  6EE6     MOVWF POSTINC1, ACCESS
+00C2  EC30     CALL 0x260, 0
+00C4  F001     NOP
+00C6  52E5     MOVF POSTDEC1, F, ACCESS
+00C8  52E5     MOVF POSTDEC1, F, ACCESS
+00CA  52E5     MOVF POSTDEC1, F, ACCESS
+166:               SH1_OE = HIGH;
+00CC  888B     BSF LATC, 4, ACCESS
+167:               SH1_OE_TRIS = OUTPUT_PIN;    
+00CE  9894     BCF TRISC, 4, ACCESS
+168:               //
+169:               //------------------------------------------- interrupt pririty config
+170:               //
+171:               //INTCON2bits.TMR0IP = LOW;
+172:               INTCONbits.GIEL = TRUE;
+00D0  8CF2     BSF INTCON, 6, ACCESS
+173:               INTCONbits.GIEH = TRUE;
+00D2  8EF2     BSF INTCON, 7, ACCESS
+174:               //
+175:               //------------------------------------------- interrupts enabled
+176:               //
+177:           }// </editor-fold>
+00D4  0012     RETURN 0
+178:           //
+179:           //
+180:           //
+181:           // <editor-fold defaultstate="collapsed" desc="init RAM">
+182:           
+183:           void InitRAM(void) {
+184:           
+185:           }// </editor-fold>
+00D6  0012     RETURN 0
+186:           //
+187:           //
+188:           //
+189:           // <editor-fold defaultstate="collapsed" desc="main">
+190:           
+191:           void main(void) {
+192:           
+193:               InitSYS();
+00D8  DFCC     RCALL InitSYS
+194:               InitRAM();
+00DA  DFFD     RCALL InitRAM
+195:           
+196:               while (1) {
+00DE  D7FE     BRA 0xDC
+197:                   SignalService();
+00DC  D801     RCALL SignalService
+198:               }// End of while(1)
+199:           }// </editor-fold>
+200:           //
+201:           //
+202:           //
+203:           // <editor-fold defaultstate="collapsed" desc="signal service">
+204:           
+205:           void SignalService(void) {
+206:           
+207:           }// End of SignalService
+00E0  0012     RETURN 0
+208:           // </editor-fold>
+209:           //
+210:           //
+211:           // <editor-fold defaultstate="collapsed" desc="eeprom read byte">
+212:           
+213:           unsigned char EEPROM_ReadByte(unsigned char address) {
+00E2  D866     RCALL __pa_0
+214:               EECON1 = 0;
+00E4  6AA6     CLRF EECON1, ACCESS
+215:               EEADR = address;
+00E6  0EFE     MOVLW 0xFE
+00E8  50DB     MOVF PLUSW2, W, ACCESS
+00EA  6EA9     MOVWF EEADR, ACCESS
+216:               EECON1bits.RD = 1;
+00EC  80A6     BSF EECON1, 0, ACCESS
+217:               return (EEDATA);
+00EE  50A8     MOVF EEDATA, W, ACCESS
+218:           }// End of EEPROM_ReadByte
+00F0  D064     BRA __pa_1
+219:           // </editor-fold>
+220:           //
+221:           //
+222:           //
+223:           // <editor-fold defaultstate="collapsed" desc="eeprom read int">
+224:           
+225:           unsigned int EEPROM_ReadInt(unsigned char address) {
+00F2  D85E     RCALL __pa_0
+00F4  0E02     MOVLW 0x2
+00F6  26E1     ADDWF FSR1, F, ACCESS
+226:               volatile unsigned int data;
+227:               data = EEPROM_ReadByte(address);
+00F8  0EFE     MOVLW 0xFE
+00FA  CFDB     MOVFF PLUSW2, POSTINC1
+00FC  FFE6     NOP
+00FE  DFF1     RCALL EEPROM_ReadByte
+0100  52E5     MOVF POSTDEC1, F, ACCESS
+0102  6EDE     MOVWF POSTINC2, ACCESS
+0104  6ADD     CLRF POSTDEC2, ACCESS
+228:               data = (data << 8);
+0106  CFDE     MOVFF POSTINC2, __tmp_0
+0108  F002     NOP
+010A  CFDD     MOVFF POSTDEC2, 0x3
+010C  F003     NOP
+010E  C002     MOVFF __tmp_0, 0x3
+0110  F003     NOP
+0112  6A02     CLRF __tmp_0, ACCESS
+0114  C002     MOVFF __tmp_0, POSTINC2
+0116  FFDE     NOP
+0118  C003     MOVFF 0x3, POSTDEC2
+011A  FFDD     NOP
+229:               data += EEPROM_ReadByte(address + 0x01);
+011C  0EFE     MOVLW 0xFE
+011E  28DB     INCF PLUSW2, W, ACCESS
+0120  6EE6     MOVWF POSTINC1, ACCESS
+0122  DFDF     RCALL EEPROM_ReadByte
+0124  52E5     MOVF POSTDEC1, F, ACCESS
+0126  26DE     ADDWF POSTINC2, F, ACCESS
+0128  0E00     MOVLW 0x0
+012A  22DD     ADDWFC POSTDEC2, F, ACCESS
+230:               return data;
+012C  CFDE     MOVFF POSTINC2, __tmp_0
+012E  F002     NOP
+0130  CFDD     MOVFF POSTDEC2, 0x3
+0132  F003     NOP
+0134  C002     MOVFF __tmp_0, PROD
+0136  FFF3     NOP
+0138  C003     MOVFF 0x3, PRODH
+013A  FFF4     NOP
+231:           }// End of eeprom read int
+013C  0E02     MOVLW 0x2
+013E  5CE1     SUBWF FSR1, W, ACCESS
+0140  E202     BC 0x146
+0142  6AE1     CLRF FSR1, ACCESS
+0144  52E5     MOVF POSTDEC1, F, ACCESS
+0146  6EE1     MOVWF FSR1, ACCESS
+0148  D038     BRA __pa_1
+232:           // </editor-fold>
+233:           //
+234:           //
+235:           //
+236:           // <editor-fold defaultstate="collapsed" desc="eeprom write byte">
+237:           
+238:           void EEPROM_WriteByte(unsigned char address, unsigned char data) {
+014A  D832     RCALL __pa_0
+014C  52E6     MOVF POSTINC1, F, ACCESS
+239:               volatile unsigned char tmp_int;
+240:               //    SEGMENT_WR = 0x00;
+241:               tmp_int = INTCON;
+014E  50F2     MOVF INTCON, W, ACCESS
+0150  6EDF     MOVWF INDF2, ACCESS
+242:               INTCONbits.GIEH = FALSE;
+0152  9EF2     BCF INTCON, 7, ACCESS
+243:               INTCONbits.GIEL = FALSE;
+0154  9CF2     BCF INTCON, 6, ACCESS
+244:               EECON1 = 0; //ensure CFGS=0 and EEPGD=0
+0156  6AA6     CLRF EECON1, ACCESS
+245:               EECON1bits.WREN = 1; //enable write to EEPROM
+0158  84A6     BSF EECON1, 2, ACCESS
+246:               EEADR = address; //setup Address
+015A  0EFE     MOVLW 0xFE
+015C  50DB     MOVF PLUSW2, W, ACCESS
+015E  6EA9     MOVWF EEADR, ACCESS
+247:               EEDATA = data; //and data
+0160  0EFD     MOVLW 0xFD
+0162  50DB     MOVF PLUSW2, W, ACCESS
+0164  6EA8     MOVWF EEDATA, ACCESS
+248:               EECON2 = 0x55; //required sequence #1
+0166  0E55     MOVLW 0x55
+0168  6EA7     MOVWF EECON2, ACCESS
+249:               EECON2 = 0xaa; //#2
+016A  0EAA     MOVLW 0xAA
+016C  6EA7     MOVWF EECON2, ACCESS
+250:               EECON1bits.WR = 1; //#3 = actual write
+016E  82A6     BSF EECON1, 1, ACCESS
+251:               while (!PIR2bits.EEIF); //wait until finished
+0170  A8A1     BTFSS PIR2, 4, ACCESS
+0172  D7FE     BRA 0x170
+252:               EECON1bits.WREN = 0; //disable write to EEPROM
+0174  94A6     BCF EECON1, 2, ACCESS
+253:               INTCON = tmp_int;
+0176  50DF     MOVF INDF2, W, ACCESS
+0178  6EF2     MOVWF INTCON, ACCESS
+254:               //Delay1KTCYx(50);
+255:           }// End of EEPROM_WriteByte
+017A  52E5     MOVF POSTDEC1, F, ACCESS
+017C  D01E     BRA __pa_1
+256:           // </editor-fold>
+257:           //
+258:           //
+259:           //
+260:           // <editor-fold defaultstate="collapsed" desc="eeprom write int">
+261:           
+262:           void EEPROM_WriteInt(unsigned char address, unsigned int data) {
+017E  D818     RCALL __pa_0
+01B0  CFD9     MOVFF FSR2, POSTINC1
+01B2  FFE6     NOP
+01B4  CFE1     MOVFF FSR1, FSR2
+01B6  FFD9     NOP
+01B8  0012     RETURN 0
+263:               EEPROM_WriteByte(address, (data >> 8));
+0180  0EFD     MOVLW 0xFD
+0182  CFDB     MOVFF PLUSW2, 0x3
+0184  F003     NOP
+0186  C003     MOVFF 0x3, __tmp_0
+0188  F002     NOP
+018A  6A03     CLRF 0x3, ACCESS
+018C  5002     MOVF __tmp_0, W, ACCESS
+018E  6EE6     MOVWF POSTINC1, ACCESS
+0190  0EFE     MOVLW 0xFE
+0192  CFDB     MOVFF PLUSW2, POSTINC1
+0194  FFE6     NOP
+0196  DFD9     RCALL EEPROM_WriteByte
+0198  52E5     MOVF POSTDEC1, F, ACCESS
+019A  52E5     MOVF POSTDEC1, F, ACCESS
+264:               EEPROM_WriteByte((address + 0x01), data);
+019C  0EFC     MOVLW 0xFC
+019E  CFDB     MOVFF PLUSW2, POSTINC1
+01A0  FFE6     NOP
+01A2  0EFE     MOVLW 0xFE
+01A4  28DB     INCF PLUSW2, W, ACCESS
+01A6  6EE6     MOVWF POSTINC1, ACCESS
+01A8  DFD0     RCALL EEPROM_WriteByte
+01AA  52E5     MOVF POSTDEC1, F, ACCESS
+01AC  52E5     MOVF POSTDEC1, F, ACCESS
+265:           }// </editor-fold>
+01AE  D005     BRA __pa_1
+01BA  52E5     MOVF POSTDEC1, F, ACCESS
+01BC  CFE7     MOVFF INDF1, FSR2
+01BE  FFD9     NOP
+01C0  0012     RETURN 0
+---  C:/MCC18/src/traditional/stdclib/__init.c  ---------------------------------------------------------
+1:             
+2:             /** @name __init
+3:              * The {\bf __init} is called if the linker can not find a
+4:              * user defined version for it
+5:              */
+6:             
+7:             void __init (void)
+8:             {
+9:             }
+000E  0012     RETURN 0
+10:            
+---  C:/MCC18/src/traditional/startup/c018i.c  ----------------------------------------------------------
+1:             /* $Id: c018i.c,v 1.7 2006/11/15 22:53:12 moshtaa Exp $ */
+2:             
+3:             /* Copyright (c)1999 Microchip Technology */
+4:             
+5:             /* MPLAB-C18 startup code, including initialized data */
+6:             
+7:             /* external reference to __init() function */
+8:             extern void __init (void);
+9:             /* external reference to the user's main routine */
+10:            extern void main (void);
+11:            /* prototype for the startup function */
+12:            void _entry (void);
+13:            void _startup (void);
+14:            /* prototype for the initialized data setup */
+15:            void _do_cinit (void);
+16:            
+17:            extern volatile near unsigned long short TBLPTR;
+18:            extern near unsigned FSR0;
+19:            extern near char __FPFLAGS;
+20:            #define RND 6
+21:            
+22:            #pragma code _entry_scn=0x000000
+23:            void
+24:            _entry (void)
+25:            {
+26:            _asm goto _startup _endasm
+0000  EF91     GOTO 0x322
+0002  F001     NOP
+27:            
+28:            }
+0004  0012     RETURN 0
+29:            #pragma code _startup_scn
+30:            void
+31:            _startup (void)
+32:            {
+33:              _asm
+34:                // Initialize the stack pointer
+35:                lfsr 1, _stack
+0322  EE11     LFSR 1, 0x100
+0324  F000     NOP
+36:                lfsr 2, _stack
+0326  EE21     LFSR 2, 0x100
+0328  F000     NOP
+37:            
+38:                clrf TBLPTRU, 0 // 1st silicon doesn't do this on POR
+032A  6AF8     CLRF TBLPTRU, ACCESS
+39:            
+40:                bcf __FPFLAGS,RND,0 // Initialize rounding flag for floating point libs
+032C  9C01     BCF 0x1, 6, ACCESS
+41:                
+42:                _endasm 
+43:                _do_cinit ();
+032E  ECE1     CALL 0x1C2, 0
+0330  F000     NOP
+44:            
+45:            loop:
+46:            
+47:              // If user defined __init is not found, the one in clib.lib will be used
+48:              __init ();
+0332  EC07     CALL 0xE, 0
+0334  F000     NOP
+49:            
+50:              // Call the user's main routine
+51:              main ();
+0336  EC6C     CALL 0xD8, 0
+0338  F000     NOP
+52:            
+53:              goto loop;
+033A  D7FB     BRA 0x332
+54:            }                               /* end _startup() */
+033C  0012     RETURN 0
+55:            
+56:            /* MPLAB-C18 initialized data memory support */
+57:            /* The linker will populate the _cinit table */
+58:            extern far rom struct
+59:            {
+60:              unsigned short num_init;
+61:              struct _init_entry
+62:              {
+63:                unsigned long from;
+64:                unsigned long to;
+65:                unsigned long size;
+66:              }
+67:              entries[];
+68:            }
+69:            _cinit;
+70:            
+71:            #pragma code _cinit_scn
+72:            void
+73:            _do_cinit (void)
+74:            {
+75:              /* we'll make the assumption in the following code that these statics
+76:               * will be allocated into the same bank.
+77:               */
+78:              static short long prom;
+79:              static unsigned short curr_byte;
+80:              static unsigned short curr_entry;
+81:              static short long data_ptr;
+82:            
+83:              // Initialized data...
+84:              TBLPTR = (short long)&_cinit;
+01C2  0E06     MOVLW 0x6
+01C4  6EF6     MOVWF TBLPTR, ACCESS
+01C6  0E00     MOVLW 0x0
+01C8  6EF7     MOVWF TBLPTRH, ACCESS
+01CA  0E00     MOVLW 0x0
+01CC  6EF8     MOVWF TBLPTRU, ACCESS
+85:              _asm
+86:                movlb data_ptr
+01CE  0100     MOVLB 0x0
+87:                tblrdpostinc
+01D0  0009     TBLRD*+
+88:                movf TABLAT, 0, 0
+01D2  50F5     MOVF TABLAT, W, ACCESS
+89:                movwf curr_entry, 1
+01D4  6F65     MOVWF curr_entry, BANKED
+90:                tblrdpostinc
+01D6  0009     TBLRD*+
+91:                movf TABLAT, 0, 0
+01D8  50F5     MOVF TABLAT, W, ACCESS
+92:                movwf curr_entry+1, 1
+01DA  6F66     MOVWF 0x66, BANKED
+93:              _endasm
+94:                //while (curr_entry)
+95:                //{
+96:                test:
+97:                _asm
+98:                 bnz 3
+01DC  E103     BNZ 0x1E4
+99:                tstfsz curr_entry, 1
+01DE  6765     TSTFSZ curr_entry, BANKED
+100:               bra 1
+01E0  D001     BRA 0x1E4
+101:               _endasm
+102:               goto done;
+01E2  D03D     BRA 0x25E
+103:                 /* Count down so we only have to look up the data in _cinit
+104:                  * once.
+105:                  *
+106:                  * At this point we know that TBLPTR points to the top of the current
+107:                  * entry in _cinit, so we can just start reading the from, to, and
+108:                  * size values.
+109:                  */
+110:                 _asm
+111:           	/* read the source address */
+112:           	tblrdpostinc
+01E4  0009     TBLRD*+
+113:           	movf TABLAT, 0, 0
+01E6  50F5     MOVF TABLAT, W, ACCESS
+114:           	movwf prom, 1
+01E8  6F60     MOVWF prom, BANKED
+115:           	tblrdpostinc
+01EA  0009     TBLRD*+
+116:           	movf TABLAT, 0, 0
+01EC  50F5     MOVF TABLAT, W, ACCESS
+117:           	movwf prom+1, 1
+01EE  6F61     MOVWF 0x61, BANKED
+118:           	tblrdpostinc
+01F0  0009     TBLRD*+
+119:           	movf TABLAT, 0, 0
+01F2  50F5     MOVF TABLAT, W, ACCESS
+120:           	movwf prom+2, 1
+01F4  6F62     MOVWF 0x62, BANKED
+121:           	/* skip a byte since it's stored as a 32bit int */
+122:           	tblrdpostinc
+01F6  0009     TBLRD*+
+123:           	/* read the destination address directly into FSR0 */
+124:           	tblrdpostinc
+01F8  0009     TBLRD*+
+125:           	movf TABLAT, 0, 0
+01FA  50F5     MOVF TABLAT, W, ACCESS
+126:           	movwf FSR0L, 0
+01FC  6EE9     MOVWF FSR0, ACCESS
+127:           	tblrdpostinc
+01FE  0009     TBLRD*+
+128:           	movf TABLAT, 0, 0
+0200  50F5     MOVF TABLAT, W, ACCESS
+129:           	movwf FSR0H, 0
+0202  6EEA     MOVWF FSR0H, ACCESS
+130:           	/* skip two bytes since it's stored as a 32bit int */
+131:           	tblrdpostinc
+0204  0009     TBLRD*+
+132:           	tblrdpostinc
+0206  0009     TBLRD*+
+133:           	/* read the destination address directly into FSR0 */
+134:           	tblrdpostinc
+0208  0009     TBLRD*+
+135:           	movf TABLAT, 0, 0
+020A  50F5     MOVF TABLAT, W, ACCESS
+136:           	movwf curr_byte, 1
+020C  6F63     MOVWF curr_byte, BANKED
+137:           	tblrdpostinc
+020E  0009     TBLRD*+
+138:           	movf TABLAT, 0, 0
+0210  50F5     MOVF TABLAT, W, ACCESS
+139:           	movwf curr_byte+1, 1
+0212  6F64     MOVWF 0x64, BANKED
+140:           	/* skip two bytes since it's stored as a 32bit int */
+141:           	tblrdpostinc
+0214  0009     TBLRD*+
+142:           	tblrdpostinc
+0216  0009     TBLRD*+
+143:                 _endasm  
+144:                 //prom = data_ptr->from;
+145:                 //FSR0 = data_ptr->to;
+146:                 //curr_byte = (unsigned short) data_ptr->size;
+147:                 /* the table pointer now points to the next entry. Save it
+148:                  * off since we'll be using the table pointer to do the copying
+149:                  * for the entry.
+150:                  */
+151:                 data_ptr = TBLPTR;
+0218  CFF6     MOVFF TBLPTR, data_ptr
+021A  F067     NOP
+021C  CFF7     MOVFF TBLPTRH, 0x68
+021E  F068     NOP
+0220  CFF8     MOVFF TBLPTRU, 0x69
+0222  F069     NOP
+152:                 
+153:                 /* now assign the source address to the table pointer */
+154:                 TBLPTR = prom;
+0224  C060     MOVFF prom, TBLPTR
+0226  FFF6     NOP
+0228  C061     MOVFF 0x61, TBLPTRH
+022A  FFF7     NOP
+022C  C062     MOVFF 0x62, TBLPTRU
+022E  FFF8     NOP
+155:           
+156:                 /* do the copy loop */
+157:                 _asm
+158:                   // determine if we have any more bytes to copy
+159:           	movlb curr_byte
+0230  0100     MOVLB 0x0
+160:           	movf curr_byte, 1, 1
+0232  5363     MOVF curr_byte, F, BANKED
+161:           copy_loop:
+162:           	bnz 2 // copy_one_byte
+0234  E102     BNZ 0x23A
+163:           	movf curr_byte + 1, 1, 1
+0236  5364     MOVF 0x64, F, BANKED
+164:           	bz 7 // done_copying
+0238  E007     BZ 0x248
+165:           
+166:           copy_one_byte:
+167:           	tblrdpostinc
+023A  0009     TBLRD*+
+168:           	movf TABLAT, 0, 0
+023C  50F5     MOVF TABLAT, W, ACCESS
+169:           	movwf POSTINC0, 0
+023E  6EEE     MOVWF POSTINC0, ACCESS
+170:           
+171:           	// decrement byte counter
+172:           	decf curr_byte, 1, 1
+0240  0763     DECF curr_byte, F, BANKED
+173:           	bc -8 // copy_loop
+0242  E2F8     BC 0x234
+174:                   decf curr_byte + 1, 1, 1
+0244  0764     DECF 0x64, F, BANKED
+175:           	bra -7 // copy_one_byte
+0246  D7F9     BRA 0x23A
+176:           
+177:           done_copying:
+178:           
+179:                 _endasm
+180:                 /* restore the table pointer for the next entry */
+181:                 TBLPTR = data_ptr;
+0248  C067     MOVFF data_ptr, TBLPTR
+024A  FFF6     NOP
+024C  C068     MOVFF 0x68, TBLPTRH
+024E  FFF7     NOP
+0250  C069     MOVFF 0x69, TBLPTRU
+0252  FFF8     NOP
+182:                 /* next entry... */
+183:                 curr_entry--;
+0254  0100     MOVLB 0x0
+0256  0765     DECF curr_entry, F, BANKED
+0258  0E00     MOVLW 0x0
+025A  5B66     SUBWFB 0x66, F, BANKED
+184:                 goto test;
+025C  D7BF     BRA 0x1DC
+185:           done:
+186:           ;
+187:           }
+025E  0012     RETURN 0

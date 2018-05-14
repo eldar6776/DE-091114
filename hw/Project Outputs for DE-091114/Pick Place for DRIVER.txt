@@ -1,0 +1,98 @@
+Altium Designer Pick and Place Locations
+C:\Users\eldar\Desktop\Apsolutni enkoder\hw\DE-091114\Project Outputs for DE-091114\Pick Place for DRIVER.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       14.05.18
+Time:       03:35
+Revision:   0
+Variant:    No variations
+Units used: mil
+
+Designator Comment     Layer       Footprint   Center-X(mil) Center-Y(mil) Rotation Description                                                                                                 
+P201       Header 10   TopLayer    HDR1X10     2625.000      3055.000      180      Header, 10-Pin                                                                                              
+C200       220uF       TopLayer    E           3325.000      3000.000      270      Solid Aluminum Capacitor with Organic Semiconductor Electrolyte: 100uF, 20V, Bulk Pack                      
+C209                   TopLayer    0805        3195.000      2350.000      270      Ceramic Chip Capacitor - Standard                                                                           
+C201                   BottomLayer 0805        3245.000      3030.000      90       Ceramic Chip Capacitor - Standard                                                                           
+U200       MC34063AD   BottomLayer 751-05_N    3300.000      3460.000      360      DC-to-DC Converter Control Circuit                                                                          
+C206       220uF       TopLayer    CAPPR2-5X11 3510.000      3335.000      270      Aluminum Electrolytic Capacitor, Radial Style with Long Leads: 220uF, 10V                                   
+C202                   BottomLayer 0805        3390.000      3005.000      90       Ceramic Chip Capacitor - Standard                                                                           
+C203                   BottomLayer 1206        3215.000      3740.000      360      Ceramic Chip Capacitor - Standard                                                                           
+C204                   BottomLayer 0805        3070.000      3500.000      270      Ceramic Chip Capacitor - Standard                                                                           
+C205                   TopLayer    0805        2400.000      2250.000      270      Ceramic Chip Capacitor - Standard                                                                           
+C207       220uF       TopLayer    CAPPR2-5X11 2230.000      2470.000      360      Aluminum Electrolytic Capacitor, Radial Style with Long Leads: 220uF, 10V                                   
+C208       10uF        TopLayer    49BC-C      3075.000      2355.000      90       Conformal Coated Solid Tantalum Chip Capacitor: 6.8uF, 20% Tolerance, 10 WVDC @ -55°C to +85°C, Surge = 13V 
+D200       BAV102      BottomLayer SOD80C      2970.000      3805.000      360      General-purpose Diode                                                                                       
+L200                   TopLayer    RB5-10.5    3180.000      3625.000      0        SMT Power Choke Coil; Size 7.3×6.6×3.0mm, ±20% Tolerance, 0.82uH, 13A                                       
+L201                   TopLayer    RB5-10.5    2223.000      3637.000      0        SMT Power Choke Coil; Size 7.3×6.6×3.0mm, ±20% Tolerance, 0.82uH, 13A                                       
+P200       Header 5X2  BottomLayer HDR2X5      2697.000      2521.000      360      Header, 5-Pin, Dual row                                                                                     
+P202       Header 5X2  BottomLayer HDR2X5      2702.000      3583.000      180      Header, 5-Pin, Dual row                                                                                     
+P203       ALIGN       TopLayer    HDR1X2      3575.000      3055.000      270      Header, 2-Pin                                                                                               
+Q200       MMBT4401    BottomLayer SOT23_N     3085.000      3210.000      180      NPN General-purpose Transistor                                                                              
+Q201       MMBT4401    BottomLayer SOT23_N     3085.000      2910.000      360      NPN General-purpose Transistor                                                                              
+Q202       MMBT2907    TopLayer    SOT23_N     3085.000      3210.000      360      PNP General-purpose Transistor                                                                              
+Q203       MMBT2907    TopLayer    SOT23_N     3085.000      2910.000      180      PNP General-purpose Transistor                                                                              
+Q204       MMBT4401    TopLayer    SOT23_N     3085.000      3340.000      180      NPN General-purpose Transistor                                                                              
+Q205       MMBT4401    TopLayer    SOT23_N     3085.000      2781.000      360      NPN General-purpose Transistor                                                                              
+Q206       MMBT4401    BottomLayer SOT23_N     2828.053      3210.000      180      NPN General-purpose Transistor                                                                              
+Q207       MMBT4401    BottomLayer SOT23_N     2828.053      2910.000      360      NPN General-purpose Transistor                                                                              
+Q208       MMBT2907    TopLayer    SOT23_N     2828.053      3210.000      360      PNP General-purpose Transistor                                                                              
+Q209       MMBT2907    TopLayer    SOT23_N     2828.053      2910.000      180      PNP General-purpose Transistor                                                                              
+Q210       MMBT4401    TopLayer    SOT23_N     2829.000      3340.000      180      NPN General-purpose Transistor                                                                              
+Q211       MMBT4401    TopLayer    SOT23_N     2828.000      2781.000      0        NPN General-purpose Transistor                                                                              
+Q212       MMBT4401    BottomLayer SOT23_N     2573.053      3210.000      180      NPN General-purpose Transistor                                                                              
+Q213       MMBT4401    BottomLayer SOT23_N     2573.053      2910.000      360      NPN General-purpose Transistor                                                                              
+Q214       MMBT2907    TopLayer    SOT23_N     2573.053      3210.000      360      PNP General-purpose Transistor                                                                              
+Q215       MMBT2907    TopLayer    SOT23_N     2573.053      2910.000      180      PNP General-purpose Transistor                                                                              
+Q216       MMBT4401    TopLayer    SOT23_N     2572.000      3339.000      180      NPN General-purpose Transistor                                                                              
+Q217       MMBT4401    TopLayer    SOT23_N     2574.000      2781.000      0        NPN General-purpose Transistor                                                                              
+Q218       MMBT4401    BottomLayer SOT23_N     2318.053      3210.000      180      NPN General-purpose Transistor                                                                              
+Q219       MMBT4401    BottomLayer SOT23_N     2318.053      2910.000      360      NPN General-purpose Transistor                                                                              
+Q220       MMBT2907    TopLayer    SOT23_N     2318.053      3210.000      360      PNP General-purpose Transistor                                                                              
+Q221       MMBT2907    TopLayer    SOT23_N     2318.053      2910.000      180      PNP General-purpose Transistor                                                                              
+Q222       MMBT4401    TopLayer    SOT23_N     2316.000      3339.000      180      NPN General-purpose Transistor                                                                              
+Q223       MMBT4401    TopLayer    SOT23_N     2317.000      2781.000      360      NPN General-purpose Transistor                                                                              
+Q224       MMBT4401    BottomLayer SOT23_N     2063.053      3210.000      180      NPN General-purpose Transistor                                                                              
+Q225       MMBT4401    BottomLayer SOT23_N     2063.053      2910.000      360      NPN General-purpose Transistor                                                                              
+Q226       MMBT2907    TopLayer    SOT23_N     2063.053      3210.000      360      PNP General-purpose Transistor                                                                              
+Q227       MMBT2907    TopLayer    SOT23_N     2063.053      2910.000      180      PNP General-purpose Transistor                                                                              
+Q228       MMBT4401    TopLayer    SOT23_N     2061.000      3339.000      180      NPN General-purpose Transistor                                                                              
+Q229       MMBT4401    TopLayer    SOT23_N     2075.000      2780.000      360      NPN General-purpose Transistor                                                                              
+R200       10K         BottomLayer ERA-0603    2996.000      3268.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R201       10K         BottomLayer ERA-0603    3180.000      2855.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R202       1K          BottomLayer ERA-0603    3094.000      3304.000      180      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R203       1K          BottomLayer ERA-0603    3075.000      2817.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R204       10K         TopLayer    ERA-0603    3230.000      3325.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R205       10K         TopLayer    ERA-0603    2980.000      2755.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R206       10K         BottomLayer ERA-0603    2738.000      3267.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R207       10K         BottomLayer ERA-0603    2917.000      2851.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R208       1K          BottomLayer ERA-0603    2837.000      3303.000      180      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R209       1K          BottomLayer ERA-0603    2816.000      2817.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R210       10K         TopLayer    ERA-0603    2933.250      3350.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R211       10K         TopLayer    ERA-0603    2720.000      2755.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R212       10K         BottomLayer ERA-0603    2484.000      3270.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R213       10K         BottomLayer ERA-0603    2664.000      2852.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R214       1K          BottomLayer ERA-0603    2581.000      3303.000      180      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R215       1K          BottomLayer ERA-0603    2564.000      2816.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R216       10K         TopLayer    ERA-0603    2675.500      3350.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R217       10K         TopLayer    ERA-0603    2475.000      2755.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R218       10K         BottomLayer ERA-0603    2228.000      3268.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R219       10K         BottomLayer ERA-0603    2410.000      2852.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R220       1K          BottomLayer ERA-0603    2326.000      3303.000      180      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R221       1K          BottomLayer ERA-0603    2309.000      2817.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R222       10K         TopLayer    ERA-0603    2417.750      3350.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R223       10K         TopLayer    ERA-0603    2215.000      2755.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R224       1R          BottomLayer ERA-0603    3490.000      3105.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R225       1R          BottomLayer ERA-0603    3495.000      2965.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R226       10K         BottomLayer ERA-0603    1974.000      3269.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R227       10K         BottomLayer ERA-0603    2155.000      2851.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R228       1K          BottomLayer ERA-0603    2073.000      3303.000      180      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R229       1K          BottomLayer ERA-0603    2057.000      2817.000      360      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R231       10K         TopLayer    ERA-0603    2160.000      3350.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R230       10K         TopLayer    ERA-0603    1966.000      2756.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W       
+R232       1R          BottomLayer ERA-0805    3355.000      3220.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W         
+R233       1R          BottomLayer ERA-0805    3275.000      3220.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W         
+R234       3K6         BottomLayer ERA-0805    3440.000      3285.000      90       Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W         
+R235       1k2         BottomLayer ERA-0805    3535.000      3230.000      270      Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W         
+U201       REG1117-3.3 TopLayer    ZZ311       2705.000      2225.000      270      800mA and 1A Low Dropout Positive Regulator 2.85V, 3.3V, 5V, and Adjustable                                 

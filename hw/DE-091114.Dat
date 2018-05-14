@@ -1,0 +1,27 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~DE-091114.PrjPcb|ReportField=ProjectFullPath~C:\Users\eldar\Desktop\Apsolutni enkoder\hw\DE-091114\DE-091114.PrjPcb|ReportField=Title~Bill of Materials For Project [DE-091114.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~105|ReportField=ReportTime~03:26:11|ReportField=ReportDate~14.5.2018.|ReportField=ReportDateTime~14.5.2018. 03:26:11|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~Adema Buće 102|ReportField=Address2~71000 Sarajevo|ReportField=Address3~Federacija BiH|ReportField=Address4~Bosna i Hercegovina|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~eldar6776@hotmail.com|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~14.5.2018.|ReportField=CurrentTime~03:24:38|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\eldar\Desktop\Apsolutni enkoder\hw\DE-091114\DRIVER.SchDoc|ReportField=DocumentName~DRIVER.SchDoc|ReportField=DocumentNumber~DE091114|ReportField=DrawnBy~Eldar Dedić|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~14.5.2018.|ReportField=Organization~PROVEN d.o.o.|ReportField=ProjectName~DE-091114.PrjPcb|ReportField=Revision~001|ReportField=Rule~|ReportField=SheetNumber~2|ReportField=SheetTotal~2|ReportField=Time~|ReportField=Title~Output Driver|ReportField=DataSourceFileName~DE-091114.PrjPcb|ReportField=DataSourceFullPath~C:\Users\eldar\Desktop\Apsolutni enkoder\hw\DE-091114\DE-091114.PrjPcb|ReportField=PCBConfigurationName~Default Configuration|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
+1|10uF|Solid Aluminum Capacitor with Organic Semiconductor Electrolyte: 10uF, 16V, Bulk Pack|C100, C104|C|94SC106X0016CBP|2
+2||Ceramic Chip Capacitor - Standard|C101, C102, C103, C105, C201, C202, C204, C205, C209|0805|C0805|9
+3|220uF|Solid Aluminum Capacitor with Organic Semiconductor Electrolyte: 100uF, 20V, Bulk Pack|C200|E|94SS107X0020EBP|1
+4||Ceramic Chip Capacitor - Standard|C203|1206|C1206|1
+5|220uF|Aluminum Electrolytic Capacitor, Radial Style with Long Leads: 220uF, 10V|C206, C207|CAPPR2-5X11|EKA00AA322C00|2
+6|10uF|Conformal Coated Solid Tantalum Chip Capacitor: 6.8uF, 20% Tolerance, 10 WVDC @ -55°C to +85°C, Surge = 13V|C208|49BC-C|49BC685B010M|1
+7|STATUS|LED dioda 3 mm|D100|LED 3mm|LED 3mm yellow|1
+8|BAV102|General-purpose Diode|D200|SOD80C|BAV102|1
+9|AEAT-6600|Absolute encoder IC|IC100|TSSOP16|AEAT-6600|1
+10||SMT Power Choke Coil; Size 7.3×6.6×3.0mm, ±20% Tolerance, 0.82uH, 13A|L200, L201|RB5-10.5|PCMC063T-R82MN|2
+11|ALIGN|Header, 2-Pin|P100, P203|HDR1X2|Header 2|2
+12|Header 5X2|Header, 5-Pin, Dual row|P101, P103, P200, P202|HDR2X5|Header 5X2|4
+13|Header 6|Header, 6-Pin|P102|HDR1X6|Header 6|1
+14|Header 10|Header, 10-Pin|P201|HDR1X10|Header 10|1
+15|MMBT4401|NPN General-purpose Transistor|Q200, Q201, Q204, Q205, Q206, Q207, Q210, Q211, Q212, Q213, Q216, Q217, Q218, Q219, Q222, Q223, Q224, Q225, Q228, Q229|SOT23_N|BC817-16|20
+16|MMBT2907|PNP General-purpose Transistor|Q202, Q203, Q208, Q209, Q214, Q215, Q220, Q221, Q226, Q227|SOT23_N|BC807-16|10
+17|10K|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W|R100, R101, R102, R104, R105, R106, R200, R201, R204, R205, R206, R207, R210, R211, R212, R213, R216, R217, R218, R219, R222, R223, R226, R227, R230, R231|ERA-0603|ERAV|26
+18|330R|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W|R103|ERA-0603|ERAV|1
+19|1K|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W|R202, R203, R208, R209, R214, R215, R220, R221, R228, R229|ERA-0603|ERAV|10
+20|1R|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W|R224, R225|ERA-0603|ERAV|2
+21|1R|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W|R232, R233|ERA-0805|ERAS|2
+22|3K6|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W|R234|ERA-0805|ERAS|1
+23|1k2|Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0805 Size, 0.1 W|R235|ERA-0805|ERAS|1
+24|PIC18F23K20-I/SO|Flash Microcontroller with nanoWatt XLP Technology, 28-pin SOIC, Industrial Temperature|U100|SOIC-SO28_N|PIC18F23K20-I/SO|1
+25|MC34063AD|DC-to-DC Converter Control Circuit|U200|751-05_N|MC34063AD|1
+26|REG1117-3.3|800mA and 1A Low Dropout Positive Regulator 2.85V, 3.3V, 5V, and Adjustable|U201|ZZ311|REG1117-3.3|1

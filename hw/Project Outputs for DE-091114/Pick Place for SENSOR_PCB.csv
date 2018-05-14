@@ -1,0 +1,33 @@
+Altium Designer Pick and Place Locations
+C:\Users\eldar\Desktop\Apsolutni enkoder\hw\DE-091114\Project Outputs for DE-091114\Pick Place for SENSOR_PCB.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       14.05.18
+Time:       03:35
+Revision:   0
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"R106","10K","TopLayer","ERA-0603","1296.000","157.000","180","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"R105","10K","TopLayer","ERA-0603","1435.000","157.000","180","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"R104","10K","TopLayer","ERA-0603","983.000","157.000","360","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"R103","330R","BottomLayer","ERA-0603","870.000","820.000","180","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"R102","10K","TopLayer","ERA-0603","920.000","770.000","360","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"R101","10K","TopLayer","ERA-0603","1440.000","790.000","180","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"R100","10K","TopLayer","ERA-0603","1440.000","850.000","180","Metal Film Thermosensitive Chip Resistor, 0.56 Ohm to 10k Ohm Range, 5% Tolerance, 0603 Size, 0.063 W"
+"P103","Header 5X2","BottomLayer","HDR2X5","1188.000","1365.000","180","Header, 5-Pin, Dual row"
+"P101","Header 5X2","BottomLayer","HDR2X5","1183.000","303.000","360","Header, 5-Pin, Dual row"
+"P100","ALIGN","TopLayer","HDR1X2","770.000","440.000","270","Header, 2-Pin"
+"D100","STATUS","BottomLayer","LED_3mm","714.000","766.999","270","LED dioda 3 mm"
+"C105","","TopLayer","0805","1630.000","1130.000","180","Ceramic Chip Capacitor - Standard"
+"C103","","TopLayer","0805","1640.000","840.000","180","Ceramic Chip Capacitor - Standard"
+"C102","","TopLayer","0805","1290.000","630.000","90","Ceramic Chip Capacitor - Standard"
+"C101","","TopLayer","0805","1380.000","630.000","90","Ceramic Chip Capacitor - Standard"
+"C100","10uF","BottomLayer","C","1639.961","760.000","360","Solid Aluminum Capacitor with Organic Semiconductor Electrolyte: 10uF, 16V, Bulk Pack"
+"C104","10uF","BottomLayer","C","1640.000","1040.000","360","Solid Aluminum Capacitor with Organic Semiconductor Electrolyte: 10uF, 16V, Bulk Pack"
+"IC100","AEAT-6600","TopLayer","TSSOP16","1182.205","840.433","0","Absolute encoder IC"
+"P102","Header 6","BottomLayer","HDR1X6","1178.000","55.000","360","Header, 6-Pin"
+"U100","PIC18F23K20-I/SO","BottomLayer","SOIC-SO28_N","1190.000","850.000","0","Flash Microcontroller with nanoWatt XLP Technology, 28-pin SOIC, Industrial Temperature"
